@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Players</h1>
+<div data-controller="search">
+  <%= render partial: "shared/search_form" %>
+  <div data-search-target="results">
+     <% @players.each do |player| %>
+        <%= render partial: "player", locals: { player: player } %>
+      <% end %>
+  </div>
+</div>
+
+<br>
+
+<%= link_to 'New Player', new_player_path %>
